@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Typing Test</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Type Tester</h1>
+        </header>
+        <main>
+            <div class="type-test">
+                <div id="words" class="words"></div>
+                <input type="text" id="input" class="input" autocomplete="off" autofocus>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <span id="wpm">0</span>
+                    <label>WPM</label>
+                </div>
+                <div class="stat">
+                    <span id="accuracy">100%</span>
+                    <label>Accuracy</label>
+                </div>
+                <div class="stat">
+                    <span id="time">60</span>
+                    <label>Time</label>
+                </div>
+            </div>
+            <div class="difficulty-selector">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div id="history"></div>
+            <div id="leaderboard"></div>
+            <button id="restart" class="restart-btn">Start</button>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

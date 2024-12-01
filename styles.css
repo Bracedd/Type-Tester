@@ -1,0 +1,233 @@
+:root {
+    --bg-color: #323437;
+    --main-color: #e2b714;
+    --text-color: #d1d0c5;
+    --error-color: #ca4754;
+    --caret-color: #e2b714;
+    --theme-transition: 0.3s ease-in-out;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color var(--theme-transition), color var(--theme-transition);
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+	 text-align:center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--main-color);
+	 justify-content: center;
+	align-items: center;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    display: none;
+}
+
+.theme-switch-label {
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background-color: #2e2e2e;
+    border-radius: 17px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-switch-inner {
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.theme-switch:checked + .theme-switch-label .theme-switch-inner {
+    transform: translateX(26px);
+    background-color: #323437;
+}
+
+.theme-switch:checked + .theme-switch-label {
+    background-color: var(--main-color);
+}
+
+.type-test {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.words {
+    font-size: 1.5rem;
+    line-height: 2;
+    margin-bottom: 1rem;
+    min-height: 6rem;
+}
+
+.input {
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--main-color);
+    color: var(--text-color);
+    caret-color: var(--caret-color);
+    
+}
+
+.input:focus {
+    outline: none;
+    
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat span {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.stat label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.restart-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.restart-btn:hover {
+    background-color: #f0c11a;
+}
+
+.restart-btn:active {
+    transform: scale(0.98);
+}
+
+.correct {
+    color: var(--main-color);
+}
+
+.incorrect {
+    color: var(--error-color);
+    text-decoration: underline;
+}
+
+.current {
+    background-color: rgba(226, 183, 20, 0.2);
+}
+
+/* Light theme */
+body.light-theme {
+    --bg-color: #f0f0f0;
+    --main-color: #e2b714;
+    --text-color: #323437;
+    --error-color: #ca4754;
+}
+
+body.light-theme .theme-switch-label {
+    background-color: #d1d0c5;
+}
+
+body.light-theme .theme-switch:checked + .theme-switch-label .theme-switch-inner {
+    background-color: #f0f0f0;
+}
+
+body.light-theme .theme-switch:checked + .theme-switch-label {
+    background-color: var(--main-color);
+}
+
+body.light-theme .type-test {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* Existing styles... */
+
+.difficulty-selector {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.difficulty-selector label {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-right: 0.5rem;
+}
+
+.difficulty-selector select {
+    font-size: 1rem;
+    padding: 0.5rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--main-color);
+    border-radius: 4px;
+}
+
+#history {
+    margin-bottom: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--text-color);
+}
+
+#leaderboard {
+    margin-bottom: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    color: var(--text-color);
+}
